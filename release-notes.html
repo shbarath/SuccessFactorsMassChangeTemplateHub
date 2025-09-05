@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Release Notes - SuccessFactors Mass Change Template Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .release-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-lg);
+        }
+        
+        .release-header {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .release-header h1 {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .release-header p {
+            font-size: var(--font-size-lg);
+            color: var(--color-gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .back-to-home {
+            position: fixed;
+            top: var(--spacing-xl);
+            left: var(--spacing-xl);
+            background: var(--sap-blue);
+            color: var(--color-white);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-weight: 500;
+            transition: var(--transition-fast);
+            z-index: 100;
+        }
+        
+        .back-to-home:hover {
+            background: var(--sap-blue-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .release-content {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-3xl);
+            box-shadow: var(--shadow-md);
+            line-height: 1.7;
+        }
+        
+        .version-section {
+            margin-bottom: var(--spacing-2xl);
+            padding-bottom: var(--spacing-xl);
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+        
+        .version-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .version-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+        }
+        
+        .version-title {
+            font-size: var(--font-size-2xl);
+            font-weight: 600;
+            color: var(--color-gray-900);
+            margin: 0;
+        }
+        
+        .version-date {
+            color: var(--color-gray-500);
+            font-weight: 500;
+        }
+        
+        .release-content h3 {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-gray-800);
+            margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+        }
+        
+        .release-content ul {
+            margin-bottom: var(--spacing-lg);
+            padding-left: var(--spacing-xl);
+        }
+        
+        .release-content li {
+            color: var(--color-gray-700);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .latest-badge {
+            background: var(--sap-green);
+            color: var(--color-white);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .version-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .release-content {
+                padding: var(--spacing-xl);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-to-home">
+        <i class="fas fa-arrow-left"></i>
+        Back to Template Hub
+    </a>
+
+    <div class="release-container">
+        <div class="release-header">
+            <h1>Release Notes</h1>
+            <p>Stay up to date with the latest updates and improvements to the SuccessFactors Mass Change Template Hub.</p>
+        </div>
+
+        <div class="release-content">
+            <!-- Version 3.2.0 -->
+            <div class="version-section">
+                <div class="version-header">
+                    <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                        <h2 class="version-title">Version 3.2.0</h2>
+                        <span class="latest-badge">Latest</span>
+                    </div>
+                    <span class="version-date">September 2, 2025</span>
+                </div>
+
+                <h3>New Features</h3>
+                <ul>
+                    <li>Added advanced search functionality with category filters</li>
+                    <li>Introduced bulk download capability for multiple templates</li>
+                    <li>New comprehensive FAQ page</li>
+                    <li>Added template preview functionality</li>
+                    <li>Integrated official SuccessFactors branding with logo</li>
+                </ul>
+
+                <h3>Improvements</h3>
+                <ul>
+                    <li>Enhanced mobile responsiveness</li>
+                    <li>Improved page load performance by 40%</li>
+                    <li>Updated UI design with modern SAP Fiori styling</li>
+                    <li>Enhanced accessibility features</li>
+                    <li>Streamlined Relationships section (removed recruiting templates)</li>
+                </ul>
+
+                <h3>Bug Fixes</h3>
+                <ul>
+                    <li>Fixed dropdown text truncation issues</li>
+                    <li>Resolved search functionality problems</li>
+                    <li>Fixed template download timeout issues</li>
+                    <li>Corrected footer navigation links</li>
+                </ul>
+            </div>
+
+            <!-- Version 3.1.2 -->
+            <div class="version-section">
+                <div class="version-header">
+                    <h2 class="version-title">Version 3.1.2</h2>
+                    <span class="version-date">August 15, 2025</span>
+                </div>
+
+                <h3>Improvements</h3>
+                <ul>
+                    <li>Enhanced error handling for failed downloads</li>
+                    <li>Improved server stability</li>
+                    <li>Updated security protocols</li>
+                </ul>
+
+                <h3>Bug Fixes</h3>
+                <ul>
+                    <li>Fixed download issues on Safari browser</li>
+                    <li>Resolved layout breaking on older browsers</li>
+                    <li>Fixed missing icons in category cards</li>
+                </ul>
+            </div>
+
+            <!-- Version 3.1.0 -->
+            <div class="version-section">
+                <div class="version-header">
+                    <h2 class="version-title">Version 3.1.0</h2>
+                    <span class="version-date">July 28, 2025</span>
+                </div>
+
+                <h3>New Features</h3>
+                <ul>
+                    <li>Added 6 new template categories</li>
+                    <li>Introduced template rating system</li>
+                    <li>Added download history tracking</li>
+                    <li>New support ticket system</li>
+                </ul>
+
+                <h3>Improvements</h3>
+                <ul>
+                    <li>Redesigned template cards</li>
+                    <li>Enhanced search algorithm</li>
+                    <li>Improved download speed</li>
+                </ul>
+            </div>
+
+            <!-- Version 3.0.0 -->
+            <div class="version-section">
+                <div class="version-header">
+                    <h2 class="version-title">Version 3.0.0</h2>
+                    <span class="version-date">June 10, 2025</span>
+                </div>
+
+                <h3>Major Release</h3>
+                <ul>
+                    <li>Complete platform redesign</li>
+                    <li>Launch of initial template library</li>
+                    <li>Implemented responsive design</li>
+                    <li>Added comprehensive documentation</li>
+                    <li>Introduced user registration features</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple fade-in animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.version-section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+                
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>

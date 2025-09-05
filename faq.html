@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - SuccessFactors Mass Change Template Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-lg);
+        }
+        
+        .faq-header {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .faq-header h1 {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .faq-header p {
+            font-size: var(--font-size-lg);
+            color: var(--color-gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .faq-search {
+            margin-bottom: var(--spacing-2xl);
+            position: relative;
+        }
+        
+        .faq-search input {
+            width: 100%;
+            padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 3rem;
+            border: 2px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-base);
+            transition: var(--transition-fast);
+        }
+        
+        .faq-search i {
+            position: absolute;
+            left: var(--spacing-md);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-gray-400);
+            font-size: var(--font-size-lg);
+        }
+        
+        .faq-categories {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-2xl);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .faq-category-btn {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border: 2px solid var(--color-gray-200);
+            border-radius: var(--radius-lg);
+            background: var(--color-white);
+            color: var(--color-gray-700);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+        
+        .faq-category-btn:hover,
+        .faq-category-btn.active {
+            border-color: var(--sap-blue);
+            background: var(--sap-blue-light);
+            color: var(--sap-blue-dark);
+        }
+        
+        .faq-section {
+            margin-bottom: var(--spacing-2xl);
+        }
+        
+        .faq-section-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+        
+        .faq-section-title i {
+            color: var(--sap-blue);
+        }
+        
+        .faq-item {
+            background: var(--color-white);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-md);
+            overflow: hidden;
+            transition: var(--transition-fast);
+        }
+        
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .faq-question {
+            padding: var(--spacing-lg);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--color-gray-50);
+            border-bottom: 1px solid var(--color-gray-200);
+            transition: var(--transition-fast);
+        }
+        
+        .faq-question:hover {
+            background: var(--sap-blue-light);
+        }
+        
+        .faq-question h3 {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-gray-900);
+            margin: 0;
+            flex: 1;
+        }
+        
+        .faq-toggle {
+            color: var(--sap-blue);
+            font-size: var(--font-size-lg);
+            transition: var(--transition-fast);
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 var(--spacing-lg);
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--transition-normal);
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: var(--spacing-lg);
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            color: var(--color-gray-700);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .faq-answer ul {
+            margin: var(--spacing-md) 0;
+            padding-left: var(--spacing-xl);
+        }
+        
+        .faq-answer li {
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-gray-700);
+        }
+        
+        .faq-answer code {
+            background: var(--color-gray-100);
+            padding: 2px 6px;
+            border-radius: var(--radius-sm);
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+        
+        .back-to-home {
+            position: fixed;
+            top: var(--spacing-xl);
+            left: var(--spacing-xl);
+            background: var(--sap-blue);
+            color: var(--color-white);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-weight: 500;
+            transition: var(--transition-fast);
+            z-index: 100;
+        }
+        
+        .back-to-home:hover {
+            background: var(--sap-blue-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .contact-support {
+            background: var(--sap-green-light);
+            border: 1px solid var(--sap-green);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-xl);
+            text-align: center;
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .contact-support h3 {
+            color: var(--sap-green);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .contact-support p {
+            color: var(--color-gray-700);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .contact-btn {
+            background: var(--sap-green);
+            color: var(--color-white);
+            padding: var(--spacing-md) var(--spacing-xl);
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+        
+        .contact-btn:hover {
+            background: #267a3a;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-to-home">
+        <i class="fas fa-arrow-left"></i>
+        Back to Template Hub
+    </a>
+
+    <div class="faq-container">
+        <div class="faq-header">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about the SuccessFactors Mass Change Template Hub and how to use the templates effectively.</p>
+        </div>
+
+        <div class="faq-search">
+            <i class="fas fa-search"></i>
+            <input type="text" id="faqSearch" placeholder="Search FAQ...">
+        </div>
+
+        <div class="faq-categories">
+            <button class="faq-category-btn active" data-category="all">All</button>
+            <button class="faq-category-btn" data-category="getting-started">Getting Started</button>
+            <button class="faq-category-btn" data-category="templates">Templates</button>
+            <button class="faq-category-btn" data-category="download">Download & Usage</button>
+            <button class="faq-category-btn" data-category="troubleshooting">Troubleshooting</button>
+            <button class="faq-category-btn" data-category="technical">Technical</button>
+        </div>
+
+        <!-- Getting Started Section -->
+        <div class="faq-section" data-category="getting-started">
+            <h2 class="faq-section-title">
+                <i class="fas fa-play-circle"></i>
+                Getting Started
+            </h2>
+
+            <div class="faq-item" data-category="getting-started">
+                <div class="faq-question">
+                    <h3>What is the SuccessFactors Mass Change Template Hub?</h3>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The SuccessFactors Mass Change Template Hub is a centralized platform that provides HR professionals with pre-configured Excel templates for performing bulk data changes in SAP SuccessFactors. It streamlines common HR processes like promotions, new hires, terminations, and other employee data management tasks.</p>
+                    <p>The hub contains 24 different templates organized into categories such as Core Employee Data, Employment & Job Management, Compensation & Pay, and more.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="getting-started">
+                <div class="faq-question">
+                    <h3>Who can use these templates?</h3>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>These templates are designed for:</p>
+                    <ul>
+                        <li>HR Administrators and Specialists</li>
+                        <li>System Administrators</li>
+                        <li>Data Analysts working with HR data</li>
+                        <li>IT professionals supporting SuccessFactors implementations</li>
+                        <li>Anyone responsible for bulk data updates in SuccessFactors</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="getting-started">
+                <div class="faq-question">
+                    <h3>Do I need special permissions to use these templates?</h3>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>While the templates themselves can be downloaded freely, you will need appropriate permissions in your SuccessFactors system to:</p>
+                    <ul>
+                        <li>Access the Import functionality</li>
+                        <li>Modify employee data in bulk</li>
+                        <li>Upload files to your SuccessFactors instance</li>
+                    </ul>
+                    <p>Contact your system administrator if you're unsure about your permissions.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Templates Section -->
+        <div class="faq-section" data-category="templates">
+            <h2 class="faq-section-title">
+                <i class="fas fa-file-excel"></i>
+                Templates
+            </h2>
+
+            <div class="faq-item" data-category="templates">
+                <div class="faq-question">
+                    <h3>What types of templates are available?</h3>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We offer 24 different templates organized into 7 categories:</p>
+                    <ul>
+                        <li><strong>Core Employee Data:</strong> Basic Import, Extended Import, Biographical Information, Personal Information, Global Information</li>
+                        <li><strong>Employment & Job Management:</strong> Employment Details, Job Information, Job Relationships, Global Assignments, Termination Details</li>
+                        <li><strong>Contact & Personal Details:</strong> Phone Information, Email Information, Addresses, Emergency Contact, Social Accounts</li>
+                        <li><strong>Identification & Documentation:</strong> National ID Information, Personal Documents Information</li>
+                        <li><strong>Relationships & Recruiting:</strong> Person Relationship, Recruit Information</li>
+                        <li><strong>Compensation & Pay:</strong> Compensation Info, Pay Component Recurring, Pay Component Non Recurring</li>
+                        <li><strong>System Operations:</strong> Compound Delete</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="templates">
+                <div class="faq-question">
+                    <h3>How do I choose the right template for my needs?</h3>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>To choose the right template:</p>
+                    <ul>
+                        <li>Use the action selection cards at the top of the page to filter by change type</li>
+                        <li>Browse templates by category using the filter dropdown</li>
+                        <li>Use the search function to find templates by name or description</li>
+                        <li>Click the preview button to see the template structure before downloading</li>
+                        <li>Check the template description and field list to ensure it matches your requirements</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="templates">
+                <div class="faq-question">
+                    <h3>Are the templates regularly updated?</h3>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, templates are regularly updated to reflect:</p>
+                    <ul>
+                        <li>Changes in SuccessFactors functionality</li>
+                        <li>New field requirements</li>
+                        <li>Best practice improvements</li>
+                        <li>User feedback and requests</li>
+                    </ul>
+                    <p>Each template shows its version number and last update date. Check back regularly for updates or enable notifications for your frequently used templates.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download & Usage Section -->
+        <div class="faq-section" data-category="download">
+            <h2 class="faq-section-title">
+                <i class="fas fa-download"></i>
+                Download & Usage
+            </h2>
+
+            <div class="faq-item" data-category="download">
+                <div class="faq-question">
+                    <h3>How do I download templates?</h3>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Downloading templates is simple:</p>
+                    <ul>
+                        <li>Click the "Download" button next to any template</li>
+                        <li>Use "Bulk Download" to download multiple filtered templates at once</li>
+                        <li>Files are downloaded as Excel (.xlsx) format</li>
+                        <li>Downloaded templates appear in your "Recently Downloaded" section</li>
+                    </ul>
+                    <p>No registration or login is required for downloads.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="download">
+                <div class="faq-question">
+                    <h3>What format are the templates in?</h3>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>All templates are provided in Microsoft Excel (.xlsx) format, which is the standard format supported by SuccessFactors for data imports. The templates include:</p>
+                    <ul>
+                        <li>Pre-configured column headers</li>
+                        <li>Data validation rules where applicable</li>
+                        <li>Instructions and examples</li>
+                        <li>Formatted cells for better readability</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="download">
+                <div class="faq-question">
+                    <h3>How do I use the templates with SuccessFactors?</h3>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>To use the templates:</p>
+                    <ul>
+                        <li>Download the appropriate template</li>
+                        <li>Fill in your employee data following the column structure</li>
+                        <li>Validate your data for completeness and accuracy</li>
+                        <li>Log into your SuccessFactors instance</li>
+                        <li>Navigate to the Import functionality</li>
+                        <li>Upload your completed template</li>
+                        <li>Review the import results and handle any exceptions</li>
+                    </ul>
+                    <p>Always test with a small dataset first before running large imports.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="download">
+                <div class="faq-question">
+                    <h3>Can I modify the templates?</h3>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, you can modify the templates to fit your specific needs, but be careful:</p>
+                    <ul>
+                        <li>Don't change the required column headers</li>
+                        <li>You can add additional columns for your reference</li>
+                        <li>Remove columns that are not applicable to your use case</li>
+                        <li>Keep a backup of the original template</li>
+                        <li>Test modified templates thoroughly before production use</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Troubleshooting Section -->
+        <div class="faq-section" data-category="troubleshooting">
+            <h2 class="faq-section-title">
+                <i class="fas fa-tools"></i>
+                Troubleshooting
+            </h2>
+
+            <div class="faq-item" data-category="troubleshooting">
+                <div class="faq-question">
+                    <h3>My template download failed. What should I do?</h3>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>If your download fails:</p>
+                    <ul>
+                        <li>Check your internet connection</li>
+                        <li>Try downloading again after a few minutes</li>
+                        <li>Clear your browser cache and cookies</li>
+                        <li>Try using a different browser</li>
+                        <li>Disable browser extensions that might block downloads</li>
+                        <li>Check if your antivirus is blocking the download</li>
+                    </ul>
+                    <p>If the problem persists, contact support with details about your browser and operating system.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="troubleshooting">
+                <div class="faq-question">
+                    <h3>The template import failed in SuccessFactors. What went wrong?</h3>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Common import failure reasons:</p>
+                    <ul>
+                        <li><strong>Missing required fields:</strong> Ensure all mandatory columns are filled</li>
+                        <li><strong>Invalid data format:</strong> Check date formats, number formats, and field lengths</li>
+                        <li><strong>Duplicate entries:</strong> Remove duplicate employee IDs</li>
+                        <li><strong>Permission issues:</strong> Verify you have rights to modify the specific data</li>
+                        <li><strong>Invalid reference data:</strong> Check that department codes, job codes, etc. exist in your system</li>
+                    </ul>
+                    <p>Always review the import error log for specific details about what failed.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="troubleshooting">
+                <div class="faq-question">
+                    <h3>Some fields in the template don't match my SuccessFactors configuration.</h3>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>This is common as SuccessFactors configurations vary by organization:</p>
+                    <ul>
+                        <li>Remove fields that don't exist in your system</li>
+                        <li>Add custom fields specific to your configuration</li>
+                        <li>Consult your system administrator for field mappings</li>
+                        <li>Use the template as a starting point and customize as needed</li>
+                        <li>Document your modifications for future use</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Section -->
+        <div class="faq-section" data-category="technical">
+            <h2 class="faq-section-title">
+                <i class="fas fa-cog"></i>
+                Technical
+            </h2>
+
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question">
+                    <h3>What browsers are supported?</h3>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The Template Hub supports all modern browsers:</p>
+                    <ul>
+                        <li>Google Chrome 90+</li>
+                        <li>Mozilla Firefox 88+</li>
+                        <li>Microsoft Edge 90+</li>
+                        <li>Safari 14+</li>
+                    </ul>
+                    <p>For the best experience, keep your browser updated to the latest version.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question">
+                    <h3>Is my data secure when using the templates?</h3>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, your data security is important:</p>
+                    <ul>
+                        <li>No employee data is transmitted to our servers</li>
+                        <li>Templates are generated client-side in your browser</li>
+                        <li>Only download statistics are tracked (no personal data)</li>
+                        <li>All data processing happens locally on your device</li>
+                        <li>We recommend following your organization's data security policies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question">
+                    <h3>Can I use the templates offline?</h3>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Once downloaded, the Excel templates can be used completely offline. However:</p>
+                    <ul>
+                        <li>You need an internet connection to access the Template Hub and download templates</li>
+                        <li>Template updates require an internet connection</li>
+                        <li>The hub website itself requires internet access</li>
+                        <li>Downloaded templates work in Excel without internet</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question">
+                    <h3>What's the maximum file size for templates?</h3>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Template files are lightweight:</p>
+                    <ul>
+                        <li>Individual templates range from 100KB to 400KB</li>
+                        <li>Bulk downloads create zip files up to 2MB</li>
+                        <li>No limit on how much data you add to the templates</li>
+                        <li>SuccessFactors import limits depend on your system configuration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Support Section -->
+        <div class="contact-support">
+            <h3>Still have questions?</h3>
+            <p>If you can't find the answer you're looking for, our support team is here to help.</p>
+            <button class="contact-btn" onclick="window.location.href='mailto:support@sf-template-hub.com'">
+                <i class="fas fa-envelope"></i>
+                Contact Support
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Toggle
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Category Filter
+            const categoryBtns = document.querySelectorAll('.faq-category-btn');
+            const faqSections = document.querySelectorAll('.faq-section');
+            const faqItemsAll = document.querySelectorAll('.faq-item');
+
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const category = btn.dataset.category;
+                    
+                    if (category === 'all') {
+                        faqSections.forEach(section => section.style.display = 'block');
+                        faqItemsAll.forEach(item => item.style.display = 'block');
+                    } else {
+                        faqSections.forEach(section => {
+                            section.style.display = section.dataset.category === category ? 'block' : 'none';
+                        });
+                        faqItemsAll.forEach(item => {
+                            item.style.display = item.dataset.category === category ? 'block' : 'none';
+                        });
+                    }
+                });
+            });
+
+            // Search Functionality
+            const searchInput = document.getElementById('faqSearch');
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                
+                faqItemsAll.forEach(item => {
+                    const question = item.querySelector('.faq-question h3').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                    
+                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        item.closest('.faq-section').style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                // Hide sections with no visible items
+                if (searchTerm) {
+                    faqSections.forEach(section => {
+                        const visibleItems = section.querySelectorAll('.faq-item[style*="block"]');
+                        section.style.display = visibleItems.length > 0 ? 'block' : 'none';
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - SuccessFactors Mass Change Template Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .terms-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-lg);
+        }
+        
+        .terms-header {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .terms-header h1 {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .terms-header p {
+            font-size: var(--font-size-lg);
+            color: var(--color-gray-600);
+            max-width: 600px;
+            margin: 0 auto var(--spacing-md);
+        }
+        
+        .last-updated {
+            background: var(--sap-blue-light);
+            color: var(--sap-blue);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .back-to-home {
+            position: fixed;
+            top: var(--spacing-xl);
+            left: var(--spacing-xl);
+            background: var(--sap-blue);
+            color: var(--color-white);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-weight: 500;
+            transition: var(--transition-fast);
+            z-index: 100;
+        }
+        
+        .back-to-home:hover {
+            background: var(--sap-blue-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .terms-content {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-3xl);
+            box-shadow: var(--shadow-md);
+            line-height: 1.7;
+        }
+        
+        .terms-content h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: 600;
+            color: var(--color-gray-900);
+            margin: var(--spacing-2xl) 0 var(--spacing-lg) 0;
+            padding-bottom: var(--spacing-md);
+            border-bottom: 2px solid var(--sap-blue-light);
+        }
+        
+        .terms-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .terms-content h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--color-gray-800);
+            margin: var(--spacing-xl) 0 var(--spacing-md) 0;
+        }
+        
+        .terms-content p {
+            color: var(--color-gray-700);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .terms-content ul, .terms-content ol {
+            margin-bottom: var(--spacing-lg);
+            padding-left: var(--spacing-xl);
+        }
+        
+        .terms-content li {
+            color: var(--color-gray-700);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .terms-content strong {
+            color: var(--color-gray-900);
+            font-weight: 600;
+        }
+        
+        .contact-info {
+            background: var(--sap-blue-light);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-xl);
+            margin: var(--spacing-2xl) 0;
+            border-left: 4px solid var(--sap-blue);
+        }
+        
+        .contact-info h3 {
+            color: var(--sap-blue);
+            margin-top: 0;
+        }
+        
+        .contact-info p {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .contact-info a {
+            color: var(--sap-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .terms-toc {
+            background: var(--color-gray-50);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-2xl);
+        }
+        
+        .terms-toc h3 {
+            color: var(--color-gray-900);
+            margin-top: 0;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .terms-toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .terms-toc li {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .terms-toc a {
+            color: var(--sap-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            transition: var(--transition-fast);
+        }
+        
+        .terms-toc a:hover {
+            background: var(--sap-blue-light);
+        }
+        
+        .warning-box {
+            background: var(--sap-red-light);
+            border: 1px solid var(--sap-red);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .warning-box h4 {
+            color: var(--sap-red);
+            margin-top: 0;
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .highlight-box {
+            background: var(--sap-green-light);
+            border: 1px solid var(--sap-green);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .highlight-box h4 {
+            color: var(--sap-green);
+            margin-top: 0;
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .info-box {
+            background: var(--sap-orange-light);
+            border: 1px solid var(--sap-orange);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .info-box h4 {
+            color: var(--sap-orange);
+            margin-top: 0;
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        @media (max-width: 768px) {
+            .terms-content {
+                padding: var(--spacing-xl);
+            }
+            
+            .terms-container {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-to-home">
+        <i class="fas fa-arrow-left"></i>
+        Back to Template Hub
+    </a>
+
+    <div class="terms-container">
+        <div class="terms-header">
+            <h1>Terms of Service</h1>
+            <p>Please read these terms carefully before using the SuccessFactors Mass Change Template Hub. By accessing or using our service, you agree to be bound by these terms.</p>
+            <span class="last-updated">
+                <i class="fas fa-calendar-alt"></i>
+                Last updated: September 2, 2025
+            </span>
+        </div>
+
+        <div class="terms-toc">
+            <h3><i class="fas fa-list"></i> Table of Contents</h3>
+            <ul>
+                <li><a href="#acceptance"><i class="fas fa-chevron-right"></i> Acceptance of Terms</a></li>
+                <li><a href="#description"><i class="fas fa-chevron-right"></i> Service Description</a></li>
+                <li><a href="#user-accounts"><i class="fas fa-chevron-right"></i> User Accounts and Registration</a></li>
+                <li><a href="#acceptable-use"><i class="fas fa-chevron-right"></i> Acceptable Use Policy</a></li>
+                <li><a href="#intellectual-property"><i class="fas fa-chevron-right"></i> Intellectual Property Rights</a></li>
+                <li><a href="#template-licenses"><i class="fas fa-chevron-right"></i> Template Licenses and Usage</a></li>
+                <li><a href="#disclaimers"><i class="fas fa-chevron-right"></i> Disclaimers and Limitations</a></li>
+                <li><a href="#privacy"><i class="fas fa-chevron-right"></i> Privacy and Data Protection</a></li>
+                <li><a href="#termination"><i class="fas fa-chevron-right"></i> Termination</a></li>
+                <li><a href="#governing-law"><i class="fas fa-chevron-right"></i> Governing Law</a></li>
+                <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Information</a></li>
+            </ul>
+        </div>
+
+        <div class="terms-content">
+            <h2 id="acceptance">1. Acceptance of Terms</h2>
+            
+            <p>By accessing, browsing, or using the SuccessFactors Mass Change Template Hub (the "Service"), you acknowledge that you have read, understood, and agree to be bound by these Terms of Service ("Terms") and our Privacy Policy.</p>
+            
+            <p>If you do not agree to these Terms, you must not access or use the Service. These Terms constitute a legally binding agreement between you ("User" or "you") and the SuccessFactors Template Hub ("we," "us," or "our").</p>
+
+            <div class="warning-box">
+                <h4><i class="fas fa-exclamation-triangle"></i> Important Notice</h4>
+                <p>These Terms may be updated from time to time. Continued use of the Service after any such changes constitutes your acceptance of the new Terms. Please review these Terms periodically.</p>
+            </div>
+
+            <h2 id="description">2. Service Description</h2>
+            
+            <p>The SuccessFactors Mass Change Template Hub is a web-based platform that provides access to pre-configured templates for mass data changes in SAP SuccessFactors systems. Our Service includes:</p>
+            
+            <ul>
+                <li><strong>Template Library:</strong> A collection of Excel and CSV templates for various SuccessFactors modules</li>
+                <li><strong>Download Service:</strong> Free access to download templates for business use</li>
+                <li><strong>Documentation:</strong> Instructions and best practices for template usage</li>
+                <li><strong>Support Resources:</strong> FAQ, user guides, and customer support</li>
+                <li><strong>Search and Filter:</strong> Tools to find relevant templates quickly</li>
+            </ul>
+
+            <h3>Service Availability</h3>
+            <p>We strive to maintain high availability of our Service, but we do not guarantee uninterrupted access. The Service may be temporarily unavailable due to:</p>
+            <ul>
+                <li>Scheduled maintenance and updates</li>
+                <li>Emergency repairs or security patches</li>
+                <li>Third-party service provider issues</li>
+                <li>Force majeure events beyond our control</li>
+            </ul>
+
+            <h2 id="user-accounts">3. User Accounts and Registration</h2>
+            
+            <h3>Anonymous Usage</h3>
+            <p>Most features of our Service can be used without creating an account. Anonymous users can browse and download templates without providing personal information.</p>
+
+            <h3>Account Registration</h3>
+            <p>Creating an account provides additional benefits such as download history, personalized recommendations, and priority support. When registering, you agree to:</p>
+            <ul>
+                <li>Provide accurate and complete information</li>
+                <li>Maintain the security of your account credentials</li>
+                <li>Promptly update your information when it changes</li>
+                <li>Notify us immediately of any unauthorized use of your account</li>
+            </ul>
+
+            <h3>Account Responsibilities</h3>
+            <p>You are responsible for all activities that occur under your account. You must:</p>
+            <ul>
+                <li>Use a strong, unique password</li>
+                <li>Keep your login credentials confidential</li>
+                <li>Log out from shared or public devices</li>
+                <li>Report suspected security breaches immediately</li>
+            </ul>
+
+            <h2 id="acceptable-use">4. Acceptable Use Policy</h2>
+            
+            <p>You agree to use the Service only for lawful purposes and in accordance with these Terms. You must not:</p>
+
+            <h3>Prohibited Activities</h3>
+            <ul>
+                <li><strong>Illegal Use:</strong> Use the Service for any illegal or unauthorized purpose</li>
+                <li><strong>Interference:</strong> Interfere with or disrupt the Service or servers</li>
+                <li><strong>Unauthorized Access:</strong> Attempt to gain unauthorized access to any part of the Service</li>
+                <li><strong>Malicious Code:</strong> Upload or transmit viruses, malware, or other harmful code</li>
+                <li><strong>Reverse Engineering:</strong> Reverse engineer, decompile, or attempt to extract source code</li>
+                <li><strong>Commercial Redistribution:</strong> Resell, redistribute, or commercialize the templates without permission</li>
+                <li><strong>Excessive Usage:</strong> Use automated tools to download large numbers of templates</li>
+            </ul>
+
+            <h3>Content Standards</h3>
+            <p>Any content you submit (feedback, support requests, etc.) must not:</p>
+            <ul>
+                <li>Contain false, misleading, or inaccurate information</li>
+                <li>Violate intellectual property rights</li>
+                <li>Include confidential or sensitive business information</li>
+                <li>Contain offensive, abusive, or inappropriate material</li>
+            </ul>
+
+            <div class="info-box">
+                <h4><i class="fas fa-info-circle"></i> Rate Limiting</h4>
+                <p>To ensure fair access for all users, we implement rate limiting on downloads. Excessive usage may result in temporary access restrictions.</p>
+            </div>
+
+            <h2 id="intellectual-property">5. Intellectual Property Rights</h2>
+            
+            <h3>Our Intellectual Property</h3>
+            <p>The Service, including its design, functionality, and content (excluding user-generated content), is owned by us and protected by intellectual property laws. This includes:</p>
+            <ul>
+                <li>Website design and user interface</li>
+                <li>Software and applications</li>
+                <li>Logos, trademarks, and branding</li>
+                <li>Documentation and instructional content</li>
+                <li>Data compilations and databases</li>
+            </ul>
+
+            <h3>SAP SuccessFactors Trademarks</h3>
+            <p>SAP, SuccessFactors, and related trademarks are the property of SAP SE or its affiliates. Our use of these trademarks is for descriptive purposes only and does not imply endorsement or affiliation with SAP.</p>
+
+            <h3>User-Generated Content</h3>
+            <p>You retain ownership of any content you submit to us (feedback, suggestions, etc.), but you grant us a non-exclusive, royalty-free license to use such content for improving our Service.</p>
+
+            <h2 id="template-licenses">6. Template Licenses and Usage</h2>
+            
+            <h3>Template License Grant</h3>
+            <p>Subject to these Terms, we grant you a limited, non-exclusive, non-transferable license to download and use our templates for your internal business purposes in connection with SAP SuccessFactors systems.</p>
+
+            <h3>Permitted Uses</h3>
+            <p>You may:</p>
+            <ul>
+                <li>Download templates for use in your organization</li>
+                <li>Modify templates to fit your specific requirements</li>
+                <li>Use templates for data import/export operations</li>
+                <li>Share templates within your organization</li>
+                <li>Create backups for internal use</li>
+            </ul>
+
+            <h3>Restrictions</h3>
+            <p>You may not:</p>
+            <ul>
+                <li>Redistribute templates to third parties for commercial purposes</li>
+                <li>Remove or modify copyright notices or attribution</li>
+                <li>Claim ownership of the original templates</li>
+                <li>Reverse engineer the template structure for competing services</li>
+                <li>Use templates in ways that violate SAP's terms of service</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4><i class="fas fa-check-circle"></i> Template Quality</h4>
+                <p>Our templates are designed following SAP SuccessFactors best practices, but you should always test them in a non-production environment before use.</p>
+            </div>
+
+            <h2 id="disclaimers">7. Disclaimers and Limitations of Liability</h2>
+            
+            <h3>Service Disclaimers</h3>
+            <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED. WE DISCLAIM ALL WARRANTIES, INCLUDING:</p>
+            <ul>
+                <li>MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</li>
+                <li>NON-INFRINGEMENT OF THIRD-PARTY RIGHTS</li>
+                <li>ACCURACY, COMPLETENESS, OR RELIABILITY OF CONTENT</li>
+                <li>UNINTERRUPTED OR ERROR-FREE OPERATION</li>
+                <li>SECURITY OR FREEDOM FROM HARMFUL COMPONENTS</li>
+            </ul>
+
+            <h3>Template Disclaimers</h3>
+            <p>We do not warrant that:</p>
+            <ul>
+                <li>Templates will meet your specific requirements</li>
+                <li>Templates are error-free or will function without issues</li>
+                <li>Templates are compatible with all SuccessFactors configurations</li>
+                <li>Use of templates will not result in data loss or system issues</li>
+            </ul>
+
+            <h3>Limitation of Liability</h3>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO:</p>
+            <ul>
+                <li>Loss of profits, data, or business opportunities</li>
+                <li>Business interruption or system downtime</li>
+                <li>Cost of substitute services or products</li>
+                <li>Damage to reputation or relationships</li>
+            </ul>
+
+            <div class="warning-box">
+                <h4><i class="fas fa-exclamation-triangle"></i> Important Recommendation</h4>
+                <p>Always test templates in a development or staging environment before using them in production systems. Ensure you have appropriate backups before making mass changes to your data.</p>
+            </div>
+
+            <h2 id="privacy">8. Privacy and Data Protection</h2>
+            
+            <p>Your privacy is important to us. Our collection, use, and protection of your information is governed by our Privacy Policy, which is incorporated into these Terms by reference.</p>
+
+            <h3>Data Processing</h3>
+            <p>We process personal information in accordance with applicable data protection laws, including:</p>
+            <ul>
+                <li>General Data Protection Regulation (GDPR)</li>
+                <li>California Consumer Privacy Act (CCPA)</li>
+                <li>Other applicable regional privacy laws</li>
+            </ul>
+
+            <h3>Your Responsibilities</h3>
+            <p>When using our templates with your SuccessFactors data, you are responsible for:</p>
+            <ul>
+                <li>Ensuring compliance with applicable data protection laws</li>
+                <li>Obtaining necessary consents for data processing</li>
+                <li>Implementing appropriate security measures</li>
+                <li>Handling personal data in accordance with your organization's policies</li>
+            </ul>
+
+            <h2 id="termination">9. Termination</h2>
+            
+            <h3>Termination by You</h3>
+            <p>You may stop using the Service at any time. If you have an account, you may delete it by contacting our support team.</p>
+
+            <h3>Termination by Us</h3>
+            <p>We may suspend or terminate your access to the Service immediately, without prior notice, if you:</p>
+            <ul>
+                <li>Violate these Terms or our policies</li>
+                <li>Engage in fraudulent or illegal activities</li>
+                <li>Pose a security risk to the Service or other users</li>
+                <li>Use the Service in a manner that could damage our reputation</li>
+            </ul>
+
+            <h3>Effect of Termination</h3>
+            <p>Upon termination:</p>
+            <ul>
+                <li>Your right to access the Service ends immediately</li>
+                <li>You must cease all use of downloaded templates (unless otherwise licensed)</li>
+                <li>We may delete your account and associated data</li>
+                <li>Provisions that should survive termination will continue to apply</li>
+            </ul>
+
+            <h2 id="governing-law">10. Governing Law and Dispute Resolution</h2>
+            
+            <h3>Governing Law</h3>
+            <p>These Terms are governed by and construed in accordance with the laws of [Jurisdiction], without regard to its conflict of law principles.</p>
+
+            <h3>Dispute Resolution</h3>
+            <p>We encourage resolving disputes through direct communication. If informal resolution is not possible:</p>
+            <ol>
+                <li><strong>Mediation:</strong> Disputes will first be submitted to mediation</li>
+                <li><strong>Arbitration:</strong> If mediation fails, disputes will be resolved through binding arbitration</li>
+                <li><strong>Class Action Waiver:</strong> You agree not to participate in class action lawsuits</li>
+                <li><strong>Jurisdiction:</strong> Any legal proceedings will be conducted in [Jurisdiction]</li>
+            </ol>
+
+            <h2 id="miscellaneous">11. Miscellaneous Provisions</h2>
+            
+            <h3>Entire Agreement</h3>
+            <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and us regarding the Service.</p>
+
+            <h3>Severability</h3>
+            <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</p>
+
+            <h3>Waiver</h3>
+            <p>Our failure to enforce any provision of these Terms does not constitute a waiver of our right to enforce such provision in the future.</p>
+
+            <h3>Assignment</h3>
+            <p>You may not assign or transfer your rights under these Terms without our written consent. We may assign our rights and obligations without restriction.</p>
+
+            <h3>Force Majeure</h3>
+            <p>We are not liable for any failure to perform our obligations due to circumstances beyond our reasonable control, including natural disasters, war, terrorism, or government actions.</p>
+
+            <div class="contact-info">
+                <h3 id="contact"><i class="fas fa-envelope"></i> Contact Information</h3>
+                <p>If you have any questions about these Terms of Service, please contact us:</p>
+                <p><strong>Email:</strong> <a href="mailto:legal@sf-template-hub.com">legal@sf-template-hub.com</a></p>
+                <p><strong>Support:</strong> <a href="mailto:support@sf-template-hub.com">support@sf-template-hub.com</a></p>
+                <p><strong>Address:</strong> SuccessFactors Template Hub Legal Department<br>
+                123 Enterprise Way, Suite 500<br>
+                Business District, NY 10001</p>
+                <p><strong>Phone:</strong> +1 (555) 123-TEMP (8367)</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            const tocLinks = document.querySelectorAll('.terms-toc a[href^="#"]');
+            
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Add temporary highlight
+                        targetElement.style.background = 'var(--sap-blue-light)';
+                        targetElement.style.transition = 'background 0.3s ease';
+                        setTimeout(() => {
+                            targetElement.style.background = '';
+                        }, 2000);
+                    }
+                });
+            });
+
+            // Track page sections in view
+            const sections = document.querySelectorAll('h2[id]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Update active link in TOC
+                        tocLinks.forEach(link => {
+                            link.style.fontWeight = '';
+                            link.style.background = '';
+                        });
+                        
+                        const activeLink = document.querySelector(`.terms-toc a[href="#${entry.target.id}"]`);
+                        if (activeLink) {
+                            activeLink.style.fontWeight = '600';
+                            activeLink.style.background = 'var(--sap-blue-light)';
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.5,
+                rootMargin: '-20% 0px -70% 0px'
+            });
+
+            sections.forEach(section => observer.observe(section));
+        });
+
+        // Terms acceptance tracking
+        function trackTermsAcceptance() {
+            const timestamp = new Date().toISOString();
+            localStorage.setItem('termsAcceptedAt', timestamp);
+            console.log('Terms acceptance tracked:', timestamp);
+        }
+
+        // Check if user has accepted terms
+        function checkTermsAcceptance() {
+            const acceptedAt = localStorage.getItem('termsAcceptedAt');
+            if (acceptedAt) {
+                console.log('User previously accepted terms at:', acceptedAt);
+            }
+            return !!acceptedAt;
+        }
+
+        // Initialize terms tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track that user viewed terms
+            console.log('Terms of Service viewed at:', new Date().toISOString());
+            
+            // Check if terms were previously accepted
+            checkTermsAcceptance();
+        });
+    </script>
+</body>
+</html>

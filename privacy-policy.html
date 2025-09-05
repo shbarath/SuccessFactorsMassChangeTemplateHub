@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - SuccessFactors Mass Change Template Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .privacy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-lg);
+        }
+        
+        .privacy-header {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .privacy-header h1 {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .privacy-header p {
+            font-size: var(--font-size-lg);
+            color: var(--color-gray-600);
+            max-width: 600px;
+            margin: 0 auto var(--spacing-md);
+        }
+        
+        .last-updated {
+            background: var(--sap-blue-light);
+            color: var(--sap-blue);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .back-to-home {
+            position: fixed;
+            top: var(--spacing-xl);
+            left: var(--spacing-xl);
+            background: var(--sap-blue);
+            color: var(--color-white);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-weight: 500;
+            transition: var(--transition-fast);
+            z-index: 100;
+        }
+        
+        .back-to-home:hover {
+            background: var(--sap-blue-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .privacy-content {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-3xl);
+            box-shadow: var(--shadow-md);
+            line-height: 1.7;
+        }
+        
+        .privacy-content h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: 600;
+            color: var(--color-gray-900);
+            margin: var(--spacing-2xl) 0 var(--spacing-lg) 0;
+            padding-bottom: var(--spacing-md);
+            border-bottom: 2px solid var(--sap-blue-light);
+        }
+        
+        .privacy-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .privacy-content h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--color-gray-800);
+            margin: var(--spacing-xl) 0 var(--spacing-md) 0;
+        }
+        
+        .privacy-content p {
+            color: var(--color-gray-700);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .privacy-content ul {
+            margin-bottom: var(--spacing-lg);
+            padding-left: var(--spacing-xl);
+        }
+        
+        .privacy-content li {
+            color: var(--color-gray-700);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .privacy-content strong {
+            color: var(--color-gray-900);
+            font-weight: 600;
+        }
+        
+        .contact-info {
+            background: var(--sap-blue-light);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-xl);
+            margin: var(--spacing-2xl) 0;
+            border-left: 4px solid var(--sap-blue);
+        }
+        
+        .contact-info h3 {
+            color: var(--sap-blue);
+            margin-top: 0;
+        }
+        
+        .contact-info p {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .contact-info a {
+            color: var(--sap-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .policy-toc {
+            background: var(--color-gray-50);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-2xl);
+        }
+        
+        .policy-toc h3 {
+            color: var(--color-gray-900);
+            margin-top: 0;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .policy-toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .policy-toc li {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .policy-toc a {
+            color: var(--sap-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            transition: var(--transition-fast);
+        }
+        
+        .policy-toc a:hover {
+            background: var(--sap-blue-light);
+        }
+        
+        .highlight-box {
+            background: var(--sap-orange-light);
+            border: 1px solid var(--sap-orange);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .highlight-box h4 {
+            color: var(--sap-orange);
+            margin-top: 0;
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        @media (max-width: 768px) {
+            .privacy-content {
+                padding: var(--spacing-xl);
+            }
+            
+            .privacy-container {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-to-home">
+        <i class="fas fa-arrow-left"></i>
+        Back to Template Hub
+    </a>
+
+    <div class="privacy-container">
+        <div class="privacy-header">
+            <h1>Privacy Policy</h1>
+            <p>Your privacy is important to us. This policy explains how we collect, use, and protect your information when you use the SuccessFactors Mass Change Template Hub.</p>
+            <span class="last-updated">
+                <i class="fas fa-calendar-alt"></i>
+                Last updated: September 2, 2025
+            </span>
+        </div>
+
+        <div class="policy-toc">
+            <h3><i class="fas fa-list"></i> Table of Contents</h3>
+            <ul>
+                <li><a href="#information-we-collect"><i class="fas fa-chevron-right"></i> Information We Collect</a></li>
+                <li><a href="#how-we-use"><i class="fas fa-chevron-right"></i> How We Use Your Information</a></li>
+                <li><a href="#information-sharing"><i class="fas fa-chevron-right"></i> Information Sharing</a></li>
+                <li><a href="#data-security"><i class="fas fa-chevron-right"></i> Data Security</a></li>
+                <li><a href="#cookies"><i class="fas fa-chevron-right"></i> Cookies and Tracking</a></li>
+                <li><a href="#your-rights"><i class="fas fa-chevron-right"></i> Your Rights</a></li>
+                <li><a href="#data-retention"><i class="fas fa-chevron-right"></i> Data Retention</a></li>
+                <li><a href="#contact-us"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="privacy-content">
+            <h2 id="information-we-collect">1. Information We Collect</h2>
+            
+            <h3>Information You Provide Directly</h3>
+            <p>When you use our service, we may collect the following information that you provide directly:</p>
+            <ul>
+                <li><strong>Contact Information:</strong> Name, email address, company name when you contact support or submit feedback</li>
+                <li><strong>Account Information:</strong> If you create an account, we collect your username, email, and password</li>
+                <li><strong>Support Requests:</strong> Information you provide when requesting help or reporting issues</li>
+                <li><strong>Feedback:</strong> Comments, suggestions, and ratings you submit about templates</li>
+            </ul>
+
+            <h3>Information Collected Automatically</h3>
+            <p>We automatically collect certain information when you visit our website:</p>
+            <ul>
+                <li><strong>Usage Data:</strong> Pages visited, time spent on site, templates downloaded, search queries</li>
+                <li><strong>Device Information:</strong> Browser type, operating system, device type, screen resolution</li>
+                <li><strong>Network Information:</strong> IP address, internet service provider, general location (country/region)</li>
+                <li><strong>Performance Data:</strong> Page load times, error reports, system performance metrics</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4><i class="fas fa-shield-alt"></i> Important Note</h4>
+                <p>We do not collect any sensitive personal data such as social security numbers, financial information, or detailed personal identifiers. All template downloads are anonymous unless you choose to create an account.</p>
+            </div>
+
+            <h2 id="how-we-use">2. How We Use Your Information</h2>
+            
+            <p>We use the collected information for the following purposes:</p>
+            
+            <h3>Service Provision</h3>
+            <ul>
+                <li>Provide access to and delivery of template downloads</li>
+                <li>Maintain and improve website functionality</li>
+                <li>Process support requests and provide customer service</li>
+                <li>Authenticate user accounts and prevent unauthorized access</li>
+            </ul>
+
+            <h3>Service Improvement</h3>
+            <ul>
+                <li>Analyze usage patterns to improve user experience</li>
+                <li>Identify popular templates and user preferences</li>
+                <li>Optimize website performance and fix technical issues</li>
+                <li>Develop new features and templates based on user needs</li>
+            </ul>
+
+            <h3>Communication</h3>
+            <ul>
+                <li>Respond to your inquiries and support requests</li>
+                <li>Send important service updates and security notifications</li>
+                <li>Provide information about new templates and features (with your consent)</li>
+            </ul>
+
+            <h2 id="information-sharing">3. Information Sharing and Disclosure</h2>
+            
+            <p>We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following limited circumstances:</p>
+
+            <h3>Service Providers</h3>
+            <p>We may share information with trusted third-party service providers who assist us in:</p>
+            <ul>
+                <li>Website hosting and infrastructure management</li>
+                <li>Analytics and performance monitoring</li>
+                <li>Email delivery and communication services</li>
+                <li>Customer support tools and systems</li>
+            </ul>
+            <p>These providers are contractually obligated to protect your information and use it only for the specified services.</p>
+
+            <h3>Legal Requirements</h3>
+            <p>We may disclose information if required by law, legal process, or government request, or if we believe disclosure is necessary to:</p>
+            <ul>
+                <li>Comply with applicable laws and regulations</li>
+                <li>Protect our rights, property, or safety</li>
+                <li>Protect the rights, property, or safety of our users</li>
+                <li>Prevent fraud or security breaches</li>
+            </ul>
+
+            <h2 id="data-security">4. Data Security</h2>
+            
+            <p>We implement appropriate technical and organizational measures to protect your information:</p>
+
+            <h3>Technical Safeguards</h3>
+            <ul>
+                <li><strong>Encryption:</strong> All data transmission is encrypted using industry-standard SSL/TLS protocols</li>
+                <li><strong>Access Controls:</strong> Strict access controls limit who can view or modify your information</li>
+                <li><strong>Secure Infrastructure:</strong> Our servers are hosted in secure, certified data centers</li>
+                <li><strong>Regular Updates:</strong> We regularly update our security systems and software</li>
+            </ul>
+
+            <h3>Organizational Safeguards</h3>
+            <ul>
+                <li>Employee training on data protection and privacy</li>
+                <li>Regular security audits and assessments</li>
+                <li>Incident response procedures for potential breaches</li>
+                <li>Privacy-by-design principles in system development</li>
+            </ul>
+
+            <h2 id="cookies">5. Cookies and Tracking Technologies</h2>
+            
+            <p>We use cookies and similar technologies to enhance your experience:</p>
+
+            <h3>Types of Cookies We Use</h3>
+            <ul>
+                <li><strong>Essential Cookies:</strong> Required for basic website functionality and security</li>
+                <li><strong>Analytics Cookies:</strong> Help us understand how users interact with our website</li>
+                <li><strong>Preference Cookies:</strong> Remember your settings and preferences</li>
+                <li><strong>Performance Cookies:</strong> Monitor website performance and user experience</li>
+            </ul>
+
+            <p>You can control cookie settings through your browser, but disabling certain cookies may limit website functionality.</p>
+
+            <h2 id="your-rights">6. Your Privacy Rights</h2>
+            
+            <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+
+            <h3>Access and Transparency</h3>
+            <ul>
+                <li>Request access to your personal information we hold</li>
+                <li>Receive information about how we process your data</li>
+                <li>Request a copy of your personal information in a portable format</li>
+            </ul>
+
+            <h3>Control and Correction</h3>
+            <ul>
+                <li>Correct or update inaccurate personal information</li>
+                <li>Request deletion of your personal information</li>
+                <li>Opt-out of marketing communications</li>
+                <li>Restrict or object to certain processing activities</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4><i class="fas fa-info-circle"></i> Exercising Your Rights</h4>
+                <p>To exercise any of these rights, please contact us using the information provided in the "Contact Us" section. We will respond to your request within 30 days.</p>
+            </div>
+
+            <h2 id="data-retention">7. Data Retention</h2>
+            
+            <p>We retain your information only as long as necessary for the purposes outlined in this policy:</p>
+
+            <ul>
+                <li><strong>Account Information:</strong> Retained while your account is active and for up to 3 years after closure</li>
+                <li><strong>Usage Data:</strong> Aggregated and anonymized data may be retained indefinitely for analytics</li>
+                <li><strong>Support Requests:</strong> Retained for 5 years for customer service and legal purposes</li>
+                <li><strong>Marketing Data:</strong> Retained until you opt-out or request deletion</li>
+            </ul>
+
+            <h2 id="changes-to-policy">8. Changes to This Privacy Policy</h2>
+            
+            <p>We may update this privacy policy periodically to reflect changes in our practices or applicable laws. When we make significant changes, we will:</p>
+            <ul>
+                <li>Update the "Last updated" date at the top of this policy</li>
+                <li>Notify users through the website or by email</li>
+                <li>Provide a summary of major changes</li>
+                <li>Allow time for review before changes take effect</li>
+            </ul>
+
+            <h2 id="international-transfers">9. International Data Transfers</h2>
+            
+            <p>As a global service, your information may be transferred to and processed in countries other than your own. When we transfer personal information internationally, we ensure appropriate safeguards are in place, including:</p>
+            <ul>
+                <li>Adequacy decisions by relevant data protection authorities</li>
+                <li>Standard contractual clauses approved by authorities</li>
+                <li>Binding corporate rules for intra-group transfers</li>
+                <li>Certification schemes and codes of conduct</li>
+            </ul>
+
+            <div class="contact-info">
+                <h3 id="contact-us"><i class="fas fa-envelope"></i> Contact Us</h3>
+                <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
+                <p><strong>Email:</strong> <a href="mailto:privacy@sf-template-hub.com">privacy@sf-template-hub.com</a></p>
+                <p><strong>Support:</strong> <a href="mailto:support@sf-template-hub.com">support@sf-template-hub.com</a></p>
+                <p><strong>Address:</strong> SuccessFactors Template Hub Privacy Office<br>
+                123 Enterprise Way, Suite 500<br>
+                Business District, NY 10001</p>
+                <p><strong>Phone:</strong> +1 (555) 123-TEMP (8367)</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            const tocLinks = document.querySelectorAll('.policy-toc a[href^="#"]');
+            
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Add temporary highlight
+                        targetElement.style.background = 'var(--sap-blue-light)';
+                        targetElement.style.transition = 'background 0.3s ease';
+                        setTimeout(() => {
+                            targetElement.style.background = '';
+                        }, 2000);
+                    }
+                });
+            });
+
+            // Track page sections in view
+            const sections = document.querySelectorAll('h2[id]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Update active link in TOC
+                        tocLinks.forEach(link => {
+                            link.style.fontWeight = '';
+                            link.style.background = '';
+                        });
+                        
+                        const activeLink = document.querySelector(`.policy-toc a[href="#${entry.target.id}"]`);
+                        if (activeLink) {
+                            activeLink.style.fontWeight = '600';
+                            activeLink.style.background = 'var(--sap-blue-light)';
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.5,
+                rootMargin: '-20% 0px -70% 0px'
+            });
+
+            sections.forEach(section => observer.observe(section));
+        });
+
+        // Print functionality
+        function printPolicy() {
+            window.print();
+        }
+
+        // Copy link functionality
+        function copyLink(section) {
+            const url = window.location.origin + window.location.pathname + '#' + section;
+            navigator.clipboard.writeText(url).then(() => {
+                // Show copied notification
+                const notification = document.createElement('div');
+                notification.textContent = 'Link copied to clipboard!';
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: var(--sap-green);
+                    color: white;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    z-index: 1000;
+                    animation: slideIn 0.3s ease;
+                `;
+                document.body.appendChild(notification);
+                setTimeout(() => notification.remove(), 3000);
+            });
+        }
+    </script>
+</body>
+</html>

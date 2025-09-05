@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuccessFactors Mass Change Template Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <img src="logo.png" alt="SuccessFactors Mass Change Template Hub" class="logo-image">
+                    </div>
+                    <div class="title-section">
+                        <h1>SuccessFactors Mass Change Template Hub</h1>
+                        <p>Streamline your bulk HR data management with professional Excel templates</p>
+                    </div>
+                </div>
+            </div>
+            <nav class="breadcrumb">
+                <span class="breadcrumb-item active">Template Hub</span>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Action Selection Section -->
+            <section class="action-selection">
+                <h2>Select Your Mass Change Type</h2>
+                <div class="action-cards">
+                    <div class="action-card" data-category="people-leader">
+                        <div class="card-icon">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <h3>Mass People Leader Changes</h3>
+                        <p>Update reporting relationships and organizational structures</p>
+                        <div class="card-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-download"></i>
+                                542 downloads
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="action-card" data-category="job-info">
+                        <div class="card-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Mass Job Information Changes</h3>
+                        <p>Modify job titles, departments, and position details</p>
+                        <div class="card-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-download"></i>
+                                721 downloads
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="action-card" data-category="compensation">
+                        <div class="card-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>Mass Compensation Changes</h3>
+                        <p>Update salary, pay components, and compensation structures</p>
+                        <div class="card-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-download"></i>
+                                634 downloads
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="action-card" data-category="job-relationships">
+                        <div class="card-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <h3>Mass Job Relationship Changes</h3>
+                        <p>Manage matrix relationships and dual reporting</p>
+                        <div class="card-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-download"></i>
+                                298 downloads
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Search and Filter Section -->
+            <section class="search-filter-section">
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="templateSearch" placeholder="Search templates by name or category...">
+                    </div>
+                    <div class="filter-container">
+                        <label for="categoryFilter">Filter by Category:</label>
+                        <select id="categoryFilter">
+                            <option value="all">All Categories</option>
+                            <option value="core-employee">Core Employee Data</option>
+                            <option value="employment-job">Employment & Job Management</option>
+                            <option value="contact-personal">Contact & Personal Details</option>
+                            <option value="identification">Identification & Documentation</option>
+                            <option value="relationships">Relationships</option>
+                            <option value="compensation-pay">Compensation & Pay</option>
+                            <option value="system-operations">System Operations</option>
+                        </select>
+                    </div>
+                    <button class="bulk-download-btn" id="bulkDownloadBtn">
+                        <i class="fas fa-download"></i>
+                        Bulk Download
+                    </button>
+                </div>
+            </section>
+
+            <!-- Template Categories Section -->
+            <section class="templates-section">
+                <div class="templates-grid">
+                    <!-- Core Employee Data -->
+                    <div class="template-category" data-category="core-employee">
+                        <div class="category-header">
+                            <h3>
+                                <i class="fas fa-user-edit"></i>
+                                Core Employee Data
+                            </h3>
+                            <span class="template-count">5 templates</span>
+                        </div>
+                        <div class="template-list">
+                            <div class="template-item" data-template="basic-import">
+                                <div class="template-info">
+                                    <h4>Basic Import</h4>
+                                    <p>Essential employee information for standard data imports</p>
+                                    <div class="template-meta">
+                                        <span class="version">v2.1</span>
+                                        <span class="updated">Updated 2 days ago</span>
+                                        <span class="popularity">
+                                            <i class="fas fa-fire"></i>
+                                            Popular
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="basic-import">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="template-item" data-template="extended-import">
+                                <div class="template-info">
+                                    <h4>Extended Import</h4>
+                                    <p>Comprehensive employee data with all available fields</p>
+                                    <div class="template-meta">
+                                        <span class="version">v1.9</span>
+                                        <span class="updated">1 week ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="extended-import">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="template-item" data-template="biographical-info">
+                                <div class="template-info">
+                                    <h4>Biographical Information</h4>
+                                    <p>Personal and biographical details management</p>
+                                    <div class="template-meta">
+                                        <span class="version">v1.5</span>
+                                        <span class="updated">3 days ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="biographical-info">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="template-item" data-template="personal-info">
+                                <div class="template-info">
+                                    <h4>Personal Information</h4>
+                                    <p>Personal details and demographic information</p>
+                                    <div class="template-meta">
+                                        <span class="version">v2.0</span>
+                                        <span class="updated">5 days ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="personal-info">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="template-item" data-template="global-info">
+                                <div class="template-info">
+                                    <h4>Global Information</h4>
+                                    <p>Multi-country and global employee data management</p>
+                                    <div class="template-meta">
+                                        <span class="version">v1.8</span>
+                                        <span class="updated">1 week ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="global-info">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Employment & Job Management -->
+                    <div class="template-category" data-category="employment-job">
+                        <div class="category-header">
+                            <h3>
+                                <i class="fas fa-building"></i>
+                                Employment & Job Management
+                            </h3>
+                            <span class="template-count">5 templates</span>
+                        </div>
+                        <div class="template-list">
+                            <div class="template-item" data-template="employment-details">
+                                <div class="template-info">
+                                    <h4>Employment Details</h4>
+                                    <p>Employment status, start dates, and contract information</p>
+                                    <div class="template-meta">
+                                        <span class="version">v2.3</span>
+                                        <span class="updated">1 day ago</span>
+                                        <span class="popularity">
+                                            <i class="fas fa-fire"></i>
+                                            Popular
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="employment-details">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="template-item" data-template="job-information">
+                                <div class="template-info">
+                                    <h4>Job Information</h4>
+                                    <p>Job titles, departments, and position specifications</p>
+                                    <div class="template-meta">
+                                        <span class="version">v2.1</span>
+                                        <span class="updated">2 days ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="job-information">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="template-item" data-template="job-relationships">
+                                <div class="template-info">
+                                    <h4>Job Relationships</h4>
+                                    <p>Reporting structures and organizational hierarchies</p>
+                                    <div class="template-meta">
+                                        <span class="version">v1.7</span>
+                                        <span class="updated">4 days ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="job-relationships">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="template-item" data-template="global-assignments">
+                                <div class="template-info">
+                                    <h4>Global Assignments</h4>
+                                    <p>International assignments and expatriate management</p>
+                                    <div class="template-meta">
+                                        <span class="version">v1.4</span>
+                                        <span class="updated">1 week ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="global-assignments">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="template-item" data-template="termination-details">
+                                <div class="template-info">
+                                    <h4>Termination Details</h4>
+                                    <p>Employee termination and separation management</p>
+                                    <div class="template-meta">
+                                        <span class="version">v1.6</span>
+                                        <span class="updated">6 days ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="termination-details">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact & Personal Details -->
+                    <div class="template-category" data-category="contact-personal">
+                        <div class="category-header">
+                            <h3>
+                                <i class="fas fa-address-card"></i>
+                                Contact & Personal Details
+                            </h3>
+                            <span class="template-count">5 templates</span>
+                        </div>
+                        <div class="template-list">
+                            <div class="template-item" data-template="phone-info">
+                                <div class="template-info">
+                                    <h4>Phone Information</h4>
+                                    <p>Contact numbers and telecommunications data</p>
+                                    <div class="template-meta">
+                                        <span class="version">v1.3</span>
+                                        <span class="updated">3 days ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="phone-info">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="template-item" data-template="email-info">
+                                <div class="template-info">
+                                    <h4>Email Information</h4>
+                                    <p>Email addresses and digital communication preferences</p>
+                                    <div class="template-meta">
+                                        <span class="version">v1.5</span>
+                                        <span class="updated">2 days ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="email-info">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="template-item" data-template="addresses">
+                                <div class="template-info">
+                                    <h4>Addresses</h4>
+                                    <p>Home, work, and mailing address information</p>
+                                    <div class="template-meta">
+                                        <span class="version">v1.8</span>
+                                        <span class="updated">5 days ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="addresses">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="template-item" data-template="emergency-contact">
+                                <div class="template-info">
+                                    <h4>Emergency Contact</h4>
+                                    <p>Emergency contact persons and relationship details</p>
+                                    <div class="template-meta">
+                                        <span class="version">v1.2</span>
+                                        <span class="updated">1 week ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="emergency-contact">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="template-item" data-template="social-accounts">
+                                <div class="template-info">
+                                    <h4>Social Accounts Information</h4>
+                                    <p>Professional social media and networking profiles</p>
+                                    <div class="template-meta">
+                                        <span class="version">v1.1</span>
+                                        <span class="updated">1 week ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="social-accounts">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Identification & Documentation -->
+                    <div class="template-category" data-category="identification">
+                        <div class="category-header">
+                            <h3>
+                                <i class="fas fa-id-card"></i>
+                                Identification & Documentation
+                            </h3>
+                            <span class="template-count">2 templates</span>
+                        </div>
+                        <div class="template-list">
+                            <div class="template-item" data-template="national-id">
+                                <div class="template-info">
+                                    <h4>National ID Information</h4>
+                                    <p>Government identification numbers and citizenship data</p>
+                                    <div class="template-meta">
+                                        <span class="version">v1.6</span>
+                                        <span class="updated">4 days ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="national-id">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="template-item" data-template="personal-documents">
+                                <div class="template-info">
+                                    <h4>Personal Documents Information</h4>
+                                    <p>Passport, visa, and other legal document management</p>
+                                    <div class="template-meta">
+                                        <span class="version">v1.4</span>
+                                        <span class="updated">6 days ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="personal-documents">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Relationships & Recruiting -->
+                    <div class="template-category" data-category="relationships">
+                        <div class="category-header">
+                            <h3>
+                                <i class="fas fa-users"></i>
+                                Relationships
+                            </h3>
+                            <span class="template-count">1 template</span>
+                        </div>
+                        <div class="template-list">
+                            <div class="template-item" data-template="person-relationship">
+                                <div class="template-info">
+                                    <h4>Person Relationship</h4>
+                                    <p>Family members and dependent relationship management</p>
+                                    <div class="template-meta">
+                                        <span class="version">v1.3</span>
+                                        <span class="updated">5 days ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="person-relationship">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Compensation & Pay -->
+                    <div class="template-category" data-category="compensation-pay">
+                        <div class="category-header">
+                            <h3>
+                                <i class="fas fa-money-bill-wave"></i>
+                                Compensation & Pay
+                            </h3>
+                            <span class="template-count">3 templates</span>
+                        </div>
+                        <div class="template-list">
+                            <div class="template-item" data-template="compensation-info">
+                                <div class="template-info">
+                                    <h4>Compensation Info</h4>
+                                    <p>Base salary, bonus, and total compensation management</p>
+                                    <div class="template-meta">
+                                        <span class="version">v2.2</span>
+                                        <span class="updated">1 day ago</span>
+                                        <span class="popularity">
+                                            <i class="fas fa-fire"></i>
+                                            Popular
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="compensation-info">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="template-item" data-template="pay-component-recurring">
+                                <div class="template-info">
+                                    <h4>Pay Component Recurring</h4>
+                                    <p>Ongoing pay elements and recurring compensation items</p>
+                                    <div class="template-meta">
+                                        <span class="version">v1.9</span>
+                                        <span class="updated">2 days ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="pay-component-recurring">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="template-item" data-template="pay-component-non-recurring">
+                                <div class="template-info">
+                                    <h4>Pay Component Non Recurring</h4>
+                                    <p>One-time payments, bonuses, and special compensation</p>
+                                    <div class="template-meta">
+                                        <span class="version">v1.6</span>
+                                        <span class="updated">4 days ago</span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="pay-component-non-recurring">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Operations -->
+                    <div class="template-category" data-category="system-operations">
+                        <div class="category-header">
+                            <h3>
+                                <i class="fas fa-cogs"></i>
+                                System Operations
+                            </h3>
+                            <span class="template-count">1 template</span>
+                        </div>
+                        <div class="template-list">
+                            <div class="template-item" data-template="compound-delete">
+                                <div class="template-info">
+                                    <h4>Compound Delete</h4>
+                                    <p>Advanced deletion operations for complex data relationships</p>
+                                    <div class="template-meta">
+                                        <span class="version">v1.1</span>
+                                        <span class="updated">1 week ago</span>
+                                        <span class="caution">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                            Use with caution
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="template-actions">
+                                    <button class="preview-btn" title="Preview template">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="download-btn" data-template="compound-delete">
+                                        <i class="fas fa-download"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recently Downloaded Section -->
+            <section class="recent-downloads" id="recentDownloads" style="display: none;">
+                <h3>
+                    <i class="fas fa-clock"></i>
+                    Recently Downloaded
+                </h3>
+                <div class="recent-items" id="recentItemsList">
+                    <!-- Recent downloads will be populated by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="release-notes.html">Release Notes</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SAP SuccessFactors Mass Change Template Hub. All rights reserved.</p>
+                <p>Made with ❤️ from Philadelphia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Download Progress Modal -->
+    <div class="modal" id="downloadModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Download in Progress</h3>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="download-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">Preparing download...</div>
+                </div>
+                <div class="download-info" id="downloadInfo">
+                    <p>Template: <span id="downloadTemplateName"></span></p>
+                    <p>Size: <span id="downloadSize">~245 KB</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Template Preview Modal -->
+    <div class="modal" id="previewModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3>Template Preview</h3>
+                <button class="modal-close" id="previewModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="preview-content" id="previewContent">
+                    <!-- Preview content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
